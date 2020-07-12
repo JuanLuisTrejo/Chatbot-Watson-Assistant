@@ -1,0 +1,660 @@
+{
+  "intents": [
+    {
+      "intent": "Buy",
+      "examples": [
+        {
+          "text": "Do you have kits and ehnacements?"
+        },
+        {
+          "text": "welcome"
+        },
+        {
+          "text": "kit"
+        },
+        {
+          "text": "EPKS"
+        },
+        {
+          "text": "buy"
+        },
+        {
+          "text": "Can I manage P1 and P2 parts?"
+        },
+        {
+          "text": "Where is currently my material?"
+        },
+        {
+          "text": "material"
+        },
+        {
+          "text": "C300"
+        },
+        {
+          "text": "I want to check the material available"
+        },
+        {
+          "text": "I'm looking for spare parts"
+        }
+      ]
+    },
+    {
+      "intent": "Learn",
+      "examples": [
+        {
+          "text": "Please list me parts for switches"
+        },
+        {
+          "text": "Please help me with HPM and EHPM material?"
+        },
+        {
+          "text": "Please list me options for Orion consoles"
+        },
+        {
+          "text": "Please list me options for C200 and C300 cards"
+        },
+        {
+          "text": "Please list me options for FSM and SM"
+        }
+      ]
+    },
+    {
+      "intent": "Pay",
+      "examples": [
+        {
+          "text": "payment"
+        },
+        {
+          "text": "what is the incoterm to use?"
+        },
+        {
+          "text": "Can I pay against a Purchase order?"
+        },
+        {
+          "text": "Can I pay with credit card?"
+        },
+        {
+          "text": "Can I pay through the contract?"
+        }
+      ]
+    },
+    {
+      "intent": "Bye",
+      "examples": [
+        {
+          "text": "Bye see you soon"
+        },
+        {
+          "text": "Hope to see you soon"
+        },
+        {
+          "text": "Thanks"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "sys-percentage",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "commercial",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "commercial",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "credit card",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "contract",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "pay",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "cash",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "payment",
+          "synonyms": [
+            "transfer"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-currency",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-location",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-date",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-time",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "spare",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "C200-C300",
+          "synonyms": [
+            "Yes",
+            "More information"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "piece",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "EPKS",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "spare",
+          "synonyms": [
+            "part number",
+            "kit",
+            "piece",
+            "material",
+            "part"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "kit",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-person",
+      "values": [],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_7_1589104248976",
+      "variable": "$commercial",
+      "dialog_node": "slot_5_1590098349022"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_6_1588603273645",
+      "variable": "$spare",
+      "dialog_node": "slot_3_1589106698507",
+      "previous_sibling": "handler_1_1588603370671"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What is your surname?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1588603273645",
+      "disabled": true,
+      "event_name": "focus",
+      "dialog_node": "handler_1_1588603370671",
+      "previous_sibling": "node_2_1589101979385"
+    },
+    {
+      "type": "standard",
+      "title": "Material selection",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Honeywell’s C300 Controller provides powerful and robust process control for the Experion® platform. Based on the unique and space-saving Series C form factor, the C300 joins the C200, C200E, and the Application Control Environment (ACE) node in operating Honeywell’s field-proven and deterministic Control Execution Environment (CEE) software\n\nWhat Is It?\n​Ideal for implementation across all industries, the C300 controller offers best-in-class process control. It supports a wide variety of process control situations, including continuous and batch processes and integration with smart field devices. Continuous process control is achieved through an array of standard functions that are built into control strategies. The C300 controller supports the ISA S88.01 batch control standard and integrates sequences with field devices, including valves, pumps, sensors, and analyzers. These field devices track the state of the sequences to perform pre-configured actions. This tight integration leads to quicker transitions between sequences, increasing the throughput.\n\nThe controller also supports advanced process control with Honeywell’s patented Profit® Loop algorithm as well as custom algorithm blocks, which let users create custom code to run in the C300 controller.\n\nHow Does It Work?\nLike C200/C200E and the ACE node, the C300 operates Honeywell’s deterministic Control Execution Environment (CEE) software which executes control strategies on a constant and predictable schedule. The CEE is loaded into the C300 memory providing the execution platform for the comprehensive set of automatic control, logic, data acquisition and calculation function blocks. Each function block contains a set of pre-defined features such as alarm settings and maintenance statistics. This embedded functionality guarantees consistent process control strategy execution.\n\nThe controller supports many input/ output (I/O) families, including Series C I/O and Process Manager I/O, and other protocols such as FOUNDATION Fieldbus, Profibus, DeviceNet, Modbus, and HART.\n\nWhat Problems Does It Solve?\n​C300 allows engineers to address their most demanding process control requirements from integration with complicated batch systems to controlling devices on a variety of networks such as FOUNDATION Fieldbus, Profibus, or Modbus. It also supports advanced control with Profit Loop, which puts model-based predictive control directly in the controller to minimize valve wear and maintenance."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1588603273645",
+      "conditions": "@spare:C200-C300",
+      "dialog_node": "node_2_1589101979385"
+    },
+    {
+      "type": "standard",
+      "title": "Get Name",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi $Name , How can I help you?  What are you looking for? \"Buy\", \"technology\" or \"payment\"?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "source": "https://static.seekingalpha.com/uploads/2020/2/19/60842-15821339672127326_origin.jpg",
+            "description": "Honeywell",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "context": {
+        "Name": "<?input.text?>"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1588713239877"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "$Name, How do you want to pay? Cash, Credit Card or Cash"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_5_1590098349022",
+      "event_name": "focus",
+      "dialog_node": "handler_7_1590098349026",
+      "previous_sibling": "handler_10_1590098349026"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "$Name, You can pay with credit card if you set it in our system"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_5_1590098349022",
+      "conditions": "@commercial:(credit card)",
+      "event_name": "filled",
+      "dialog_node": "handler_4_1590098492805",
+      "previous_sibling": "handler_9_1590098459344"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "$Name, For what kind of payment do you want info?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_5_1590098349022",
+      "conditions": "@commercial:pay",
+      "event_name": "filled",
+      "dialog_node": "handler_7_1590358893929",
+      "previous_sibling": "handler_4_1590358824622"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "$Name, If you have an open contract with us with Honeywell you can order P1, P2 parts against it. Check A360 contract models, you will enjoy a full coverage"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_5_1590098349022",
+      "conditions": "@commercial:contract",
+      "event_name": "filled",
+      "dialog_node": "handler_10_1590098533007",
+      "previous_sibling": "handler_4_1590098492805"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "$Name, For what kind of payment do you want info?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_5_1590098349022",
+      "conditions": "@commercial:payment",
+      "event_name": "filled",
+      "dialog_node": "handler_4_1590358824622",
+      "previous_sibling": "handler_10_1590098533007"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "$Name, You can't pay with cash"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_5_1590098349022",
+      "conditions": "@commercial:cash",
+      "event_name": "filled",
+      "dialog_node": "handler_9_1590098459344",
+      "previous_sibling": "handler_7_1590098349026"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_5_1590098349022",
+      "context": {
+        "commercial": "@commercial"
+      },
+      "conditions": "@commercial",
+      "event_name": "input",
+      "dialog_node": "handler_10_1590098349026"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Kits and Enhancements provide packaged offerings to enhance the installed Honeywell equipment at specialized pricing. Users benefit from a cost-effective, low-risk upgrade path that allows for better long-term support for the system, along with increased performance and added functionality.  Users can access the Kits and Enhancements online catalog to search and find relevant information. A PDF version of the catalog is also available under the Documentation tab.​"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "What Is It?\n​Honeywell offers a range of Kits and Enhancements for users' hardware to help them take advantage of the most advanced technology solutions available such as the Experion® Process Knowledge Solution (PKS) platform. In addition, Honeywell offers a variety of hardware upgrades for controllers, flat panel displays, user stations and more. This leads to multiple benefits, including reduced abnormal situations, better decision-making, and improved plant reliability.\n\nKits and Enhancements cover the following:\n\nExperion Server & Station Upgrades\n\nTPS Server & Station Upgrades\n\nExperion Controller upgrades\n\nHigh-performance Process Manager (HPM) controller upgrades\n\nMonitor and Flat Panel Display Upgrades\n\nProcessor upgrades\n\nMPU Chassis Replacements\n\nQuality Control System (QCS) Upgrades\n\nLocal Control Network (LCN) Upgrades\n\nPower Supply Upgrades\n\nMiscellaneous Upgrades.\n\nHow Does It Work?\n​Honeywell has created its Kits and Enhancements offering exclusively for its existing users so they can enjoy an increased value for the systems purchased. The products are delivered either as a complete new node or managed as an upgrade, providing all the required components, along with instructions to guide the installation and minimize downtime.\n\nThe program offers predefined packages designed to meet the most common installed configurations and cover a wide range of products and degrees of change. Critical paths for upgrading application servers and platforms are well defined and have a proven track record. However, since the kit might not fully meet all configuration requirements, users may require additional material.\n\nWhat Problems Does It Solve?\n​Kits and Enhancements is a testimony to Honeywell’s commitment to continual hardware evolution and providing a path forward to next-generation technology while valuing users' existing investments. Honeywell’s services team works closely with users to define their migration requirements and minimize infrastructure costs. The result: improved plant performance and increased operational reliability."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "source": "https://www.honeywellprocess.com/library/marketing/marketing-images/Products/G-L/KitsandEnhancements/slideshow/KitsandEnhancements.jpg",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "slot_3_1589106698507",
+      "conditions": "@spare:kit",
+      "event_name": "filled",
+      "dialog_node": "handler_1_1589106924654",
+      "previous_sibling": "handler_6_1589106698583"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "$Name What material are you looking for? Kits, C200-C300 or EPKS?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_3_1589106698507",
+      "event_name": "focus",
+      "dialog_node": "handler_6_1589106698583",
+      "previous_sibling": "handler_7_1589106698583"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Experion® Process Knowledge System (PKS) integrates an advanced automation platform and innovative software applications to improve users' business performance and peace of mind. Unifying people with process, business and asset management, this distributed control system (DCS) helps process manufacturers increase profitability and productivity. It’s the only automation system that focuses on people — making the most of the knowledge they hold. By integrating disparate data across facilities, making the most of resources and people, and feeding it all into a unified automation system, users can achieve an operation that’s more proactive, efficient and responsive.\n\nCheck the page for more details\n\nhttps://www.honeywellprocess.com/en-US/explore/products/control-monitoring-and-safety-systems/integrated-control-and-safety-systems/experion-pks/Pages/default.aspx\n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "Orion Consoles",
+            "source": "http://processengineering.co.uk/files/img_cache/2146429/480_405Experion-Orion-Console-PKS-Orion.jpg?1456223408",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "slot_3_1589106698507",
+      "conditions": "@spare:EPKS",
+      "event_name": "filled",
+      "dialog_node": "handler_5_1589106979990",
+      "previous_sibling": "handler_1_1589106924654"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Last controlers which integrate all the Cyber and conectivity techs. Do you want more information about C300 controllers?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "C300",
+            "source": "https://www.ourinstrumentationgroup.com/DCSHoneywell.jpg",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "slot_3_1589106698507",
+      "conditions": "@spare:C200-C300",
+      "event_name": "filled",
+      "dialog_node": "handler_6_1589107063633",
+      "previous_sibling": "handler_5_1589106979990"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_3_1589106698507",
+      "context": {
+        "spare": "@spare"
+      },
+      "conditions": "@spare",
+      "event_name": "input",
+      "dialog_node": "handler_7_1589106698583"
+    },
+    {
+      "type": "standard",
+      "title": "Bye             ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thanks for your questions, hope to see you back soon"
+              },
+              {
+                "text": "Hope to see you back soon"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Bye",
+      "dialog_node": "node_8_1589109132625",
+      "previous_sibling": "node_7_1589104248976"
+    },
+    {
+      "type": "frame",
+      "title": "Payment questions",
+      "output": {
+        "generic": []
+      },
+      "conditions": "#Pay",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_7_1589104248976",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_6_1588603273645",
+      "digress_out_slots": "allow_all"
+    },
+    {
+      "type": "frame",
+      "title": "Buy material",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I recommend $Name to use always Ecomerce. Check it out. ecommerce.honeywellprocess.com. Write again \"C300\" if you want further info"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "#Buy",
+      "digress_in": "returns",
+      "dialog_node": "node_6_1588603273645",
+      "digress_out": "allow_all",
+      "previous_sibling": "Welcome",
+      "digress_out_slots": "allow_all"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              },
+              {
+                "text": "Please kindly repeat your question"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "Anything else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_8_1589109132625",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. What is your name? "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Ecommerce",
+  "language": "en",
+  "description": "ECommerce chatbot through which address questions from users"
+}
