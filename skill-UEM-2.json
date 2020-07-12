@@ -1,0 +1,914 @@
+{
+  "intents": [
+    {
+      "intent": "Cafetería",
+      "examples": [
+        {
+          "text": "restaurante"
+        },
+        {
+          "text": "comida"
+        },
+        {
+          "text": "horario cafetería"
+        },
+        {
+          "text": "Tiene menu vegetariano?"
+        },
+        {
+          "text": "Tiene precios subvencionados?"
+        },
+        {
+          "text": "Tiene precio de menu?"
+        },
+        {
+          "text": "Cuales son los horarios de la cafetería?"
+        }
+      ],
+      "description": "Gestión de la cafetería"
+    },
+    {
+      "intent": "Atencionestudiante",
+      "examples": [
+        {
+          "text": "Que horario tiene la oficina de atención al estudiante?"
+        },
+        {
+          "text": "Me puedo sacar el carnet de estudiante?"
+        },
+        {
+          "text": "Hay parking disponible para estudiantes?"
+        }
+      ],
+      "description": "Oficina de atención al estudiante"
+    },
+    {
+      "intent": "Transporte",
+      "examples": [
+        {
+          "text": "Cuales son los horarios del transporte al campus?"
+        },
+        {
+          "text": "horario transporte"
+        },
+        {
+          "text": "autobus"
+        },
+        {
+          "text": "Hay transporte gratuito al campus?"
+        },
+        {
+          "text": "Cuales son los puntos de salida de los medios de transporte?"
+        }
+      ],
+      "description": "Aclara cuestiones relativas al transporte disponible en el campus"
+    },
+    {
+      "intent": "Online",
+      "examples": [
+        {
+          "text": "Cuantas horas semanales requiere la educación online?"
+        },
+        {
+          "text": "Que es la educación online?"
+        },
+        {
+          "text": "Qué beneficios tiene la educación online?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Horarios",
+      "examples": [
+        {
+          "text": "horarios universidad"
+        },
+        {
+          "text": "A que hora empiezan las clases?"
+        },
+        {
+          "text": "Cual es la duración de las clases?"
+        },
+        {
+          "text": "A que hora acaban las clases?"
+        }
+      ],
+      "description": "Aclara los horarios de las clases"
+    },
+    {
+      "intent": "Biblioteca",
+      "examples": [
+        {
+          "text": "Cuanto tiempo tengo para la devolución de libros?"
+        },
+        {
+          "text": "Como puedo gestionar un prestamo?"
+        },
+        {
+          "text": "Donde encuentro la lista de libros?"
+        },
+        {
+          "text": "horarios biblioteca"
+        },
+        {
+          "text": "Cuál es el horario de la biblioteca?"
+        },
+        {
+          "text": "biblioteca"
+        }
+      ],
+      "description": "Describe servicios de biblioteca"
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Libro",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "prestamo",
+          "synonyms": [
+            "préstamo"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "lista",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "horarios",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "horario biblioteca",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "biblioteca",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "préstamo",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "libro",
+          "synonyms": [
+            "documento",
+            "fotocopias"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "horario",
+          "synonyms": [
+            "horarios"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "autobus",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "autobus",
+          "synonyms": [
+            "shuttle",
+            "metro"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "transporte",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "horario",
+          "synonyms": [
+            "horarios"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "puntos de salida",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "tipo de transporte",
+          "synonyms": [
+            "transportes"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "horarios",
+          "synonyms": [
+            "horario"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "clases",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "clase",
+          "synonyms": [
+            "aula"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-currency",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "comida",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "precio",
+          "synonyms": [
+            "precios"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "horario",
+          "synonyms": [
+            "horarios"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "horario cafeteria",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "cafetería",
+          "synonyms": [
+            "Cafetería"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "comida",
+          "synonyms": [
+            "desayuno",
+            "almuerzo",
+            "cena",
+            "menu",
+            "menus"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "menu",
+          "synonyms": [
+            "menus"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "vegerariano",
+          "synonyms": [
+            "vegetarianos",
+            "vegano"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "horarios",
+          "synonyms": [
+            "horario"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "restaurante",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-percentage",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-time",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-date",
+      "values": [],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_9_1589131201549",
+      "variable": "$autobus",
+      "dialog_node": "slot_3_1589131253389",
+      "previous_sibling": "handler_3_1589131252795"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_9_1589131201549",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1589131252795"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "$Nombre, Que información necesitas? horarios,  tipo de transporte, puntos de salida"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_3_1589131253389",
+      "event_name": "focus",
+      "dialog_node": "handler_7_1589131253432",
+      "previous_sibling": "handler_2_1589131253432"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Tenemos solo transporte a través de autobuses privados que llamamos lanzaderas. El itinerareo que siguen lo puedes consultar en la pagina web.  https://universidadeuropea.es "
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_3_1589131253389",
+      "conditions": "@autobus:(tipo de transporte)",
+      "event_name": "filled",
+      "dialog_node": "handler_10_1589131676289",
+      "previous_sibling": "handler_1_1589131439013"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Los horarios de salida son de 7:00 a 9:00 en intervalos de 15 minutos cada día. Los horarios de vuelta son de 17:00 a 20:00 también en intervalos de 15 minutos "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "Mapa transporte",
+            "source": "https://tse2.mm.bing.net/th?id=OIP.LseYcaIziKDofPSS25u5SwHaEe&pid=Api&P=0&w=262&h=159",
+            "description": "Mapa transporte",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "slot_3_1589131253389",
+      "conditions": "@autobus:horarios",
+      "event_name": "filled",
+      "dialog_node": "handler_1_1589131439013",
+      "previous_sibling": "handler_7_1589131253432"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "$Nombre, Que información necesitas? horarios,  tipo de transporte, puntos de salida"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_3_1589131253389",
+      "conditions": "@autobus:transporte",
+      "event_name": "filled",
+      "dialog_node": "handler_5_1589650138535",
+      "previous_sibling": "handler_5_1589565209340"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Los horarios de salida son de 7:00 a 9:00 en intervalos de 15 minutos cada día. Los horarios de vuelta son de 17:00 a 20:01 también en intervalos de 15 minutos "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "source": "https://tse2.mm.bing.net/th?id=OIP.LseYcaIziKDofPSS25u5SwHaEe&pid=Api&P=0&w=262&h=159",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "slot_3_1589131253389",
+      "conditions": "@autobus:(horario)",
+      "event_name": "filled",
+      "dialog_node": "handler_5_1589565209340",
+      "previous_sibling": "handler_3_1589131809739"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "El punto de salida por la mañana es Nuevos ministerios llegando a los campus. Por las tardes las lanzaderas salen de los campus llegando a nuevos ministerios"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_3_1589131253389",
+      "conditions": "@autobus:(puntos de salida)",
+      "event_name": "filled",
+      "dialog_node": "handler_3_1589131809739",
+      "previous_sibling": "handler_10_1589131676289"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_3_1589131253389",
+      "context": {
+        "autobus": "@autobus"
+      },
+      "conditions": "@autobus",
+      "event_name": "input",
+      "dialog_node": "handler_2_1589131253432"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "$Nombre, Que quieres saber, horarios, tiempo de prestamo o lista de libro?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_8_1589127210011",
+      "conditions": "@Libro:(biblioteca)",
+      "event_name": "filled",
+      "dialog_node": "handler_4_1589649622544",
+      "previous_sibling": "handler_2_1589615382010"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "$Nombre, Que quieres saber, horarios, tiempo de prestamo o lista de libro?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_8_1589127210011",
+      "event_name": "focus",
+      "dialog_node": "handler_9_1589127210057",
+      "previous_sibling": "handler_10_1589127210057"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Tenemos una lista de libros disponible por área y materia "
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_8_1589127210011",
+      "conditions": "@Libro:lista",
+      "event_name": "filled",
+      "dialog_node": "handler_3_1589127514182",
+      "previous_sibling": "handler_5_1589127409715"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "El préstamo de libros es por tres dias extensible a 5 con previo aviso"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_8_1589127210011",
+      "conditions": "@Libro:(prestamo)",
+      "event_name": "filled",
+      "dialog_node": "handler_5_1589127409715",
+      "previous_sibling": "handler_10_1589127324577"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Nuestro horario de biblioteca es de 8:00 a 17:01"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_8_1589127210011",
+      "conditions": "@Libro:horarios",
+      "event_name": "filled",
+      "dialog_node": "handler_2_1589615382010",
+      "previous_sibling": "handler_3_1589127514182"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Nuestro horario de biblioteca es de 8:00 a 17:00"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_8_1589127210011",
+      "conditions": "@Libro:horario",
+      "event_name": "filled",
+      "dialog_node": "handler_10_1589127324577",
+      "previous_sibling": "handler_9_1589127210057"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1589127210011",
+      "context": {
+        "Libro": "@Libro"
+      },
+      "conditions": "@Libro",
+      "event_name": "input",
+      "dialog_node": "handler_10_1589127210057"
+    },
+    {
+      "type": "standard",
+      "title": "Obtener nombre",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Que tal $Nombre...en que te puedo ayudar, información sobre nuestra cafetería, biblioteca, transporte, educación online, horarios y teléfonos de la universidad o atención al estudiante?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "UEM Alcobendas",
+            "source": "https://gamedustria.com/wp-content/uploads/2016/11/uem-300x169.jpg",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "Bienvenido",
+      "context": {
+        "Nombre": "<?input.text?>"
+      },
+      "conditions": "true",
+      "dialog_node": "node_3_1589566821117"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "El horario de la cafetería es de 8:00 de 17:00, los horarios en los que menos ocupación hay es de 10:00 a 12:30 y de 14:30 a 16:01"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_1_1589128462326",
+      "conditions": "@comida:horarios",
+      "event_name": "filled",
+      "dialog_node": "handler_5_1589130011746",
+      "previous_sibling": "handler_2_1589129238504"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Tenemos 3 menus; menu de carne, menu mixto y menu de pescado todos ellos incluyen postre y bebida"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_1_1589128462326",
+      "conditions": "@comida:menu",
+      "event_name": "filled",
+      "dialog_node": "handler_1_1589130881275",
+      "previous_sibling": "handler_5_1589130011746"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "El horario de la cafetería es de 8:00 de 17:00, los horarios en los que menos ocupación hay es de 10:00 a 12:30 y de 14:30 a 16:00"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_1_1589128462326",
+      "conditions": "@comida:(horario)",
+      "event_name": "filled",
+      "dialog_node": "handler_4_1589565079975",
+      "previous_sibling": "handler_1_1589130881275"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Si $Name tenemos menus vegetarianos para ti, consúltalo cuando llegues al restaurante. Tenemos menu variado y equilibrado que favorece tu salud"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_1_1589128462326",
+      "conditions": "@comida:vegerariano",
+      "event_name": "filled",
+      "dialog_node": "handler_2_1589129238504",
+      "previous_sibling": "handler_9_1589129139197"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Nuestros menus están subvencionados, te sorprederán los precios. Desayuno 1.5€, Almuerzo 5€ y cenas hasta las 19:00 3€"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_1_1589128462326",
+      "conditions": "@comida:precio",
+      "event_name": "filled",
+      "dialog_node": "handler_9_1589129139197",
+      "previous_sibling": "handler_8_1589128462393"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "$Nombre, Que necesitas info de horarios, menus o precios?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_1_1589128462326",
+      "conditions": "@comida:cafetería",
+      "event_name": "filled",
+      "dialog_node": "handler_7_1589650043407",
+      "previous_sibling": "handler_4_1589565079975"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "$Nombre, Que necesitas info de horarios, menus o precios?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_1_1589128462326",
+      "event_name": "focus",
+      "dialog_node": "handler_8_1589128462393",
+      "previous_sibling": "handler_4_1589128462393"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_1_1589128462326",
+      "context": {
+        "comida": "@comida"
+      },
+      "conditions": "@comida",
+      "event_name": "input",
+      "dialog_node": "handler_4_1589128462393"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_9_1589128405419",
+      "variable": "$comida",
+      "dialog_node": "slot_1_1589128462326",
+      "previous_sibling": "handler_2_1589128461945"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_9_1589128405419",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1589128461945"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_2_1589126840284",
+      "variable": "$Libro",
+      "dialog_node": "slot_8_1589127210011",
+      "previous_sibling": "handler_1_1589127209260"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1589126840284",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1589127209260"
+    },
+    {
+      "type": "standard",
+      "title": "Educación online",
+      "output": {
+        "generic": [
+          {
+            "query": "",
+            "filter": "",
+            "query_type": "natural_language",
+            "response_type": "search_skill"
+          }
+        ]
+      },
+      "conditions": "#Online",
+      "digress_in": "returns",
+      "dialog_node": "node_4_1589406696759",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_9_1589131201549"
+    },
+    {
+      "type": "standard",
+      "title": "En otras cosas",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Te voy a dar varias opciones que responda tu pregunta, si necesitas más información o tu pregunta es distinta te agradecería más detalles"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_4_1589406696759"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "En otras cosas",
+      "previous_sibling": "node_4_1589406696759",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Horarios y teléfonos de interés",
+      "output": {
+        "generic": [
+          {
+            "source": "https://universidadeuropea.es/uploads/media/1500x/07/87-87-HEADER_1500x844_CAMPUS_VILLAVICIOSA.jpg?v=2-0",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "La universidad está abierta desde las 7:00 hasta las 22:00. Los teléfonos de atención son:\n91 414 66 11\tMadrid\n96 104 38 80\tValencia\n922 09 70 91\tCanarias\nSi quieres entrar en el configurador de horarios de clases puedes acceder a:\nhttps://app.uem.es/apps/HorarTitul/html/HorarioTitulaciones.html?_ga=2.96031260.1471629335.1545211408-576454557.1544718706\n\n\nTe animamos a que vengas a nuestras jornadas de puertas abiertas el 28 de Mayo puedes encontrar toda la información en el siguiente link. APUNTATE!!!!!!\n\nhttps://universidadeuropea.es/puertas-abiertas/open-day-28-mayo"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Horarios",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_6_1589553853958",
+      "digress_out": "allow_all",
+      "previous_sibling": "Bienvenido"
+    },
+    {
+      "type": "frame",
+      "title": "Transporte",
+      "conditions": "#Transporte",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_9_1589131201549",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_9_1589128405419",
+      "digress_out_slots": "allow_all"
+    },
+    {
+      "type": "frame",
+      "title": "Cafetería",
+      "conditions": "#Cafetería",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_9_1589128405419",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_2_1589126840284",
+      "digress_out_slots": "allow_all"
+    },
+    {
+      "type": "frame",
+      "title": "Biblioteca",
+      "conditions": "#Biblioteca",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1589126840284",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_6_1589553853958",
+      "digress_out_slots": "allow_all"
+    },
+    {
+      "type": "standard",
+      "title": "Bienvenido",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hola, soy tu chatbot. ¿Cómo te llamas?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Bienvenido"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Querías decir:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "Ninguna de las anteriores"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Querías decir:"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "UEM",
+  "language": "es",
+  "description": "SKill a través del cual el chatbot para nuevos estudiantes de la escuela tecnológica de UEM-IBM"
+}
